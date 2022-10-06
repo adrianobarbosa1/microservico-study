@@ -8,7 +8,8 @@ const CardPostList = () => {
   const [post, setPost] = useState({})
 
   const fetchPost = async () => {
-    const res = await axios.get("http://localhost:4000/posts")
+    const res = await axios.get("http://localhost:4002/posts")
+    console.log(res.data)
     setPost(res.data)
   }
 
@@ -39,7 +40,7 @@ const CardPostList = () => {
         </Box>
         <Divider color="gray" />
         <CommentCreate postId={post.id} />
-        <CommentList postId={post.id} />
+        <CommentList comments={post.comments} />
       </Flex>
     )
   })

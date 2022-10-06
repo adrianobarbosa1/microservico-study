@@ -1,14 +1,7 @@
 import React from "react"
-import {
-  ChakraProvider,
-  Box,
-  Container,
-  Heading,
-  Divider,
-} from "@chakra-ui/react"
+import { ChakraProvider, Box, Container } from "@chakra-ui/react"
 
-import PostList from "./components/PostList"
-import CardPost from "./components/CardPost"
+import CardPostCreate from "./components/CardPostCreate"
 import CardPostList from "./components/CardPostList"
 
 const App = () => {
@@ -16,7 +9,7 @@ const App = () => {
     <ChakraProvider>
       <Box bg="#f0f2f5">
         <Container>
-          <CardPost />
+          <CardPostCreate />
           <CardPostList />
         </Container>
       </Box>

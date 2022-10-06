@@ -1,21 +1,7 @@
-import React, { useState, useEffect } from "react"
-import { Flex, Avatar, Button, Box, Input } from "@chakra-ui/react"
-import axios from "axios"
+import React from "react"
+import { Flex, Avatar } from "@chakra-ui/react"
 
-const CommentList = ({ postId }) => {
-  const [comments, setComments] = useState([])
-
-  const fetchComment = async () => {
-    const res = await axios.get(
-      `http://localhost:4001/posts/${postId}/comments`
-    )
-    setComments(res.data)
-  }
-
-  useEffect(() => {
-    fetchComment()
-  }, [])
-
+const CommentList = ({ comments }) => {
   const renderedComments = comments.map((comment) => {
     return (
       <Flex align="center" mt="1rem">
