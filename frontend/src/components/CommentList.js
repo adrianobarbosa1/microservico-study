@@ -3,8 +3,21 @@ import { Flex, Avatar } from "@chakra-ui/react"
 
 const CommentList = ({ comments }) => {
   const renderedComments = comments.map((comment) => {
+    let content
+    if (comment.status === "approved") {
+      content = comment.content
+    }
+
+    if (comment.status === "pending") {
+      content = "Esse comentario está esperando aprovação"
+    }
+
+    if (comment.status === "rejected") {
+      content = "Esse comentario é improprio e foi rejeitado"
+    }
+
     return (
-      <Flex align="center" mt="1rem">
+      <Flex align="center" mt="1rem" key={comment.id}>
         <Avatar size="sm" src="https://bit.ly/sage-adebayo" />
         <Flex
           align="center"
@@ -16,7 +29,7 @@ const CommentList = ({ comments }) => {
           color="#65676b"
           bg="#e4e6e9"
         >
-          {comment.content}
+          {content}
         </Flex>
       </Flex>
     )

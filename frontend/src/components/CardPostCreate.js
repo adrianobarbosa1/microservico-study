@@ -1,4 +1,4 @@
-import { Flex, Avatar, Divider, Button, Text, Input } from "@chakra-ui/react"
+import { Flex, Avatar } from "@chakra-ui/react"
 import ButtonPost from "./ButtonPost"
 
 const CardPostCreate = () => {
