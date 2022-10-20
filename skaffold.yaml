@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+metadata:
+  name: microservico-study
+build:
+  artifacts:
+  - image: drakefit/auth
+    context: ticketing/auth
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - ticketing/infra/k8s/auth-depl-com-comentarios.yaml
+    - ticketing/infra/k8s/auth-depl.yaml
+    - ticketing/infra/k8s/ingress-srv.yaml
