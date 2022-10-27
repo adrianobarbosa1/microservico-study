@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node-dev --poll src/index.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "test-coverage": "vitest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
   },
   "devDependencies": {
     "@types/supertest": "^2.0.12",
+    "@vitest/coverage-c8": "^0.24.3",
     "mongodb-memory-server": "^6.9.6",
     "supertest": "^6.3.1",
     "vitest": "^0.24.3"
