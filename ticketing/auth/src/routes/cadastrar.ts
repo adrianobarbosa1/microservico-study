@@ -19,6 +19,7 @@ router.post(
   ValidationRequest,
   async (req: Request, res: Response) => {
     const { email, senha } = req.body
+    console.log(email)
     const existeUsuario = await Usuario.findOne({ email })
     if (existeUsuario) {
       throw new BadRequestError("Email já cadastrado")
