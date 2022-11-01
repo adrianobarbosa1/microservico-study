@@ -19,7 +19,6 @@ router.post(
   ValidationRequest,
   async (req: Request, res: Response) => {
     const { email, senha } = req.body
-    console.log(email)
     const existeUsuario = await Usuario.findOne({ email })
     if (existeUsuario) {
       throw new BadRequestError("Email já cadastrado")
@@ -44,6 +43,7 @@ router.post(
       jwt: usuarioJwt,
     }
 
+    console.log(req.session)
     res.status(201).send(usuario)
   }
 )

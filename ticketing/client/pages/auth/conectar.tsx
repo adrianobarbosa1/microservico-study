@@ -19,7 +19,7 @@ import axios from "axios"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
-export default function Cadastrar() {
+export default function Conectar() {
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
   const [errors, setErrors] = useState([])
@@ -28,7 +28,7 @@ export default function Cadastrar() {
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      const response = await axios.post("/api/usuarios/cadastrar", {
+      const response = await axios.post("/api/usuarios/conectar", {
         email,
         senha,
       })
@@ -54,7 +54,7 @@ export default function Cadastrar() {
             <LockOutlinedIcon sx={{ backgroundColor: "primary.main" }} />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Cadastrar
+            Conectar
           </Typography>
           <Box
             sx={{
@@ -111,7 +111,7 @@ export default function Cadastrar() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Cadastrar
+                Login
               </Button>
               <Grid container justifyContent="flex-end">
                 <Grid item>
