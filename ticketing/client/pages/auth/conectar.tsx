@@ -32,6 +32,7 @@ export default function Conectar() {
         email,
         senha,
       })
+      console.log(response)
       response.data
       router.push("/")
     } catch (err) {
