@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@adrtickets/commom": "^1.0.3",
     "@mui/icons-material": "^5.10.9",
     "@types/cookie-session": "^2.0.44",
     "@types/express": "^4.17.14",

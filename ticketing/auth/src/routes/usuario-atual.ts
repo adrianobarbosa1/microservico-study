@@ -1,6 +1,5 @@
 import express from "express"
-import { requerAutenticacao } from "../middlewares/require-auth"
-import { usuarioAtual } from "../middlewares/usuario-atual"
+import { requerAutenticacao, usuarioAtual } from "@adrtickets/commom"
 
 const router = express.Router()
 
