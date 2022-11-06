@@ -3,6 +3,7 @@ import "express-async-errors"
 import cookieSession from "cookie-session"
 
 import { NotFoundError, errorHandler } from "@adrtickets/commom"
+import { criarTicketRouter } from "./routes/novo"
 
 const app = express()
 app.set("trust proxy", true)
@@ -13,6 +14,8 @@ app.use(
     secure: process.env.NODE_ENV !== "test",
   })
 )
+
+app.use(criarTicketRouter)
 
 app.all("*", async (req, res) => {
   throw new NotFoundError()
