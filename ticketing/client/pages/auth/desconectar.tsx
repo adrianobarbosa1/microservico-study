@@ -18,7 +18,7 @@ const Desconectar = () => {
 
   useEffect(() => {
     doRquest()
-  }, [])
+  }, [doRquest])
 
   return <h1>Desconectando...</h1>
 }
